@@ -12,7 +12,34 @@
 		A44B007F1BB1D87900680F45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44B007D1BB1D87900680F45 /* Main.storyboard */; };
 		A44B00811BB1D87900680F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A44B00801BB1D87900680F45 /* Assets.xcassets */; };
 		A44B00841BB1D87900680F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44B00821BB1D87900680F45 /* LaunchScreen.storyboard */; };
+		A44B00921BB1D9B500680F45 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = A44B00911BB1D9B500680F45 /* blockerList.json */; };
+		A44B00941BB1D9B500680F45 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44B00931BB1D9B500680F45 /* ActionRequestHandler.swift */; };
+		A44B00981BB1D9B500680F45 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A44B008F1BB1D9B500680F45 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A44B00961BB1D9B500680F45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A44B006E1BB1D87900680F45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A44B008E1BB1D9B500680F45;
+			remoteInfo = ContentBlocker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A44B009C1BB1D9B500680F45 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A44B00981BB1D9B500680F45 /* ContentBlocker.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A44B00761BB1D87900680F45 /* SafariContentBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafariContentBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +49,21 @@
 		A44B00801BB1D87900680F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A44B00831BB1D87900680F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A44B00851BB1D87900680F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A44B008F1BB1D9B500680F45 /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A44B00911BB1D9B500680F45 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		A44B00931BB1D9B500680F45 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		A44B00951BB1D9B500680F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A44B00731BB1D87900680F45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A44B008C1BB1D9B500680F45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				A44B00781BB1D87900680F45 /* SafariContentBlocker */,
+				A44B00901BB1D9B500680F45 /* ContentBlocker */,
 				A44B00771BB1D87900680F45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A44B00761BB1D87900680F45 /* SafariContentBlocker.app */,
+				A44B008F1BB1D9B500680F45 /* ContentBlocker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +104,16 @@
 			path = SafariContentBlocker;
 			sourceTree = "<group>";
 		};
+		A44B00901BB1D9B500680F45 /* ContentBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				A44B00911BB1D9B500680F45 /* blockerList.json */,
+				A44B00931BB1D9B500680F45 /* ActionRequestHandler.swift */,
+				A44B00951BB1D9B500680F45 /* Info.plist */,
+			);
+			path = ContentBlocker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +124,34 @@
 				A44B00721BB1D87900680F45 /* Sources */,
 				A44B00731BB1D87900680F45 /* Frameworks */,
 				A44B00741BB1D87900680F45 /* Resources */,
+				A44B009C1BB1D9B500680F45 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A44B00971BB1D9B500680F45 /* PBXTargetDependency */,
 			);
 			name = SafariContentBlocker;
 			productName = SafariContentBlocker;
 			productReference = A44B00761BB1D87900680F45 /* SafariContentBlocker.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A44B008E1BB1D9B500680F45 /* ContentBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A44B00991BB1D9B500680F45 /* Build configuration list for PBXNativeTarget "ContentBlocker" */;
+			buildPhases = (
+				A44B008B1BB1D9B500680F45 /* Sources */,
+				A44B008C1BB1D9B500680F45 /* Frameworks */,
+				A44B008D1BB1D9B500680F45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentBlocker;
+			productName = ContentBlocker;
+			productReference = A44B008F1BB1D9B500680F45 /* ContentBlocker.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +163,9 @@
 				ORGANIZATIONNAME = Evasio;
 				TargetAttributes = {
 					A44B00751BB1D87900680F45 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					A44B008E1BB1D9B500680F45 = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -112,6 +184,7 @@
 			projectRoot = "";
 			targets = (
 				A44B00751BB1D87900680F45 /* SafariContentBlocker */,
+				A44B008E1BB1D9B500680F45 /* ContentBlocker */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +200,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A44B008D1BB1D9B500680F45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A44B00921BB1D9B500680F45 /* blockerList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -139,7 +220,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A44B008B1BB1D9B500680F45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A44B00941BB1D9B500680F45 /* ActionRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A44B00971BB1D9B500680F45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A44B008E1BB1D9B500680F45 /* ContentBlocker */;
+			targetProxy = A44B00961BB1D9B500680F45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A44B007D1BB1D87900680F45 /* Main.storyboard */ = {
@@ -248,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SafariContentBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.evasio.SafariContentBlocker;
@@ -259,10 +357,35 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SafariContentBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.evasio.SafariContentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A44B009A1BB1D9B500680F45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.evasio.SafariContentBlocker.ContentBlocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A44B009B1BB1D9B500680F45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.evasio.SafariContentBlocker.ContentBlocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -283,6 +406,14 @@
 			buildConfigurations = (
 				A44B00891BB1D87900680F45 /* Debug */,
 				A44B008A1BB1D87900680F45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A44B00991BB1D9B500680F45 /* Build configuration list for PBXNativeTarget "ContentBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A44B009A1BB1D9B500680F45 /* Debug */,
+				A44B009B1BB1D9B500680F45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
